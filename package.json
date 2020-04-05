@@ -1,0 +1,25 @@
+{
+  "name": "media-api",
+  "version": "1.0.0",
+  "description": "Simple demo REST API to practice GraphQL",
+  "main": "index.js",
+  "scripts": {
+    "start:express-rest": "nodemon ./express-rest/index.js",
+    "start:express-graphql": "nodemon ./express-graphql/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Cait Powell",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.17.1",
+    "express-graphql": "^0.9.0",
+    "graphql": "^14.6.0",
+    "mongoose": "^5.4.15",
+    "swagger-jsdoc": "^3.5.0",
+    "swagger-ui-express": "^4.1.3"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
