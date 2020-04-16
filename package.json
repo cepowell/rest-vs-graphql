@@ -1,7 +1,7 @@
 {
   "name": "media-api",
   "version": "1.0.0",
-  "description": "Simple API implemented built once RESTfully and once with GraphQL.",
+  "description": "Simple API built once RESTfully and once with GraphQL.",
   "scripts": {
     "start:express-rest": "nodemon ./express-rest/index.js",
     "start:express-graphql": "nodemon ./express-graphql/index.js"
@@ -12,9 +12,7 @@
     "express": "^4.17.1",
     "express-graphql": "^0.9.0",
     "graphql": "^14.6.0",
-    "mongoose": "^5.4.15",
-    "swagger-jsdoc": "^3.5.0",
-    "swagger-ui-express": "^4.1.3"
+    "mongoose": "^5.4.15"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"

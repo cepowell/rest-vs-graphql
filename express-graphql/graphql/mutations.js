@@ -120,7 +120,9 @@ const Mutation = new GraphQLObjectType({
         });
         newComment.save();
         return MediaItem.findByIdAndUpdate(args.id, {
-          $push: { "comments": newComment }
+          $push: {
+            "comments": newComment
+          }
         }, {
           new: true,
           useFindAndModify: false

@@ -27,7 +27,9 @@ const Query = new GraphQLObjectType({
     mediaItem: {
       type: MediaItemType,
       args: {
-        id: { type: GraphQLNonNull(GraphQLID) }
+        id: {
+          type: GraphQLNonNull(GraphQLID)
+        }
       },
       resolve: (root, args, context, info) => {
         return MediaItem.findById(args.id).populate('comments');
@@ -42,7 +44,9 @@ const Query = new GraphQLObjectType({
     comment: {
       type: CommentType,
       args: {
-        id: { type: GraphQLNonNull(GraphQLID) }
+        id: {
+          type: GraphQLNonNull(GraphQLID)
+        }
       },
       resolve: (root, args, context, info) => {
         return Comment.findById(args.id).exec();

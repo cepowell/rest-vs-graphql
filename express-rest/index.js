@@ -2,8 +2,6 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const dbConfig = require('./config/database.config');
-const swaggerUi = require('swagger-ui-express');
-const swaggerJSDoc = require('swagger-jsdoc');
 
 const app = express();
 const port = process.env.port || 8080;
@@ -37,25 +35,3 @@ require('./routes/comment.routes.js')(app);
 app.listen(port, () => {
   console.log("Running on port " + port);
 });
-
-const swaggerDefinition = {
-  swagger: '2.0',
-  info: {
-    title: 'Media Items API',
-    description: 'API to support the Do The Lesbians Die application',
-    version: '1.0.0'
-  },
-  host: 'localhost:8080',
-  basePath: '/',
-};
-
-const options = {
-  swaggerDefinition: swaggerDefinition,
-  apis: [
-    'express-rest/routes/media-item.routes.js',
-    'express-rest/routes/comment.routes.js'
-  ],
-};
-
-const swaggerSpec = swaggerJSDoc(options);
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
