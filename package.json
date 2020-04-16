@@ -1,15 +1,12 @@
 {
   "name": "media-api",
   "version": "1.0.0",
-  "description": "Simple demo REST API to practice GraphQL",
-  "main": "index.js",
+  "description": "Simple API implemented built once RESTfully and once with GraphQL.",
   "scripts": {
     "start:express-rest": "nodemon ./express-rest/index.js",
-    "start:express-graphql": "nodemon ./express-graphql/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:express-graphql": "nodemon ./express-graphql/index.js"
   },
   "author": "Cait Powell",
-  "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.17.1",

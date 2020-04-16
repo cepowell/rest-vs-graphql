@@ -1,8 +1,5 @@
 const graphql = require('graphql');
 
-const MediaItem = require('./models/media-item.model');
-const Comment = require('./models/comment.model');
-
 const {
   GraphQLObjectType,
   GraphQLString,
@@ -15,28 +12,23 @@ const {
 const MediaItemType = new GraphQLObjectType({
   name: 'MediaItem',
   fields: () => ({
-    id: {
+    _id: {
       type: GraphQLID
     },
     title: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLNonNull(GraphQLString)
     },
     year: {
       type: GraphQLString
     },
     mediaType: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLNonNull(GraphQLString)
     },
     representationType: {
-      type: new GraphQLNonNull(GraphQLString)
+      type: GraphQLNonNull(GraphQLString)
     },
     comments: {
-      type: new GraphQLList(CommentType),
-      resolve(parent, args) {
-        return Comment.find({
-
-        })
-      }
+      type: GraphQLList(CommentType)
     },
     positive: {
       type: GraphQLBoolean
@@ -50,7 +42,7 @@ const MediaItemType = new GraphQLObjectType({
 const CommentType = new GraphQLObjectType({
   name: 'Comment',
   fields: () => ({
-    id: {
+    _id: {
       type: GraphQLID
     },
     content: {
@@ -58,3 +50,8 @@ const CommentType = new GraphQLObjectType({
     }
   })
 });
+
+module.exports = {
+  MediaItemType,
+  CommentType
+};

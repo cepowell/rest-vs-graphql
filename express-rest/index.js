@@ -35,7 +35,7 @@ require('./routes/media-item.routes.js')(app);
 require('./routes/comment.routes.js')(app);
 
 app.listen(port, () => {
-  console.log("Running app on port " + port);
+  console.log("Running on port " + port);
 });
 
 const swaggerDefinition = {

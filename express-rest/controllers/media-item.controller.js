@@ -68,7 +68,7 @@ exports.findOne = (req, res) => {
 
 exports.delete = (req, res) => {
   MediaItem
-    .findByIdAndRemove(req.params.itemId)
+    .findByIdAndDelete(req.params.itemId)
     .then(item => {
       if (!item) {
         return res.status(404).send({

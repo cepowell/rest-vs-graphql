@@ -2,17 +2,9 @@ const express = require('express');
 const graphqlHTTP = require('express-graphql');
 const mongoose = require('mongoose');
 const dbConfig = require('./config/database.config');
+const schema = require('./graphql/schema');
 
-const {
-  GraphQLID,
-  GraphQLString,
-  GraphQLList,
-  GraphQLNonNull,
-  GraphQLObjectType,
-  GraphQLSchema,
-} = require('graphql');
-
-var app = express();
+const app = express();
 const port = process.env.port || 8080;
 
 mongoose.connect(dbConfig.url, {
@@ -25,9 +17,10 @@ mongoose.connect(dbConfig.url, {
 });
 
 app.use('/graphql', graphqlHTTP({
+  schema: schema,
   graphiql: true
 }));
 
 app.listen(8080, () => {
-  console.log("Running app on port " + port);
+  console.log("Running on port " + port);
 });
